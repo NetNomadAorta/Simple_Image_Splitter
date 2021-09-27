@@ -49,12 +49,12 @@ def imageFlipper(imagePath, splitSlotDir, lenName):
     flipImageX = cv2.flip(image, 1)
     flipImageY = cv2.flip(image, 0)
     flipImageXY = cv2.flip(image, -1)
-    cv2.imwrite(splitSlotDir + imagePath[-(lenName+1):], image)
-    cv2.imwrite(splitSlotDir + imagePath[-(lenName+1):-4] \
+    cv2.imwrite(splitSlotDir + "/" +  imagePath[-(lenName+1):], image)
+    cv2.imwrite(splitSlotDir + "/" +  imagePath[-(lenName+1):-4] \
         + "-Flipped_X.jpg", flipImageX)
-    cv2.imwrite(splitSlotDir + imagePath[-(lenName+1):-4] \
+    cv2.imwrite(splitSlotDir + "/" +  imagePath[-(lenName+1):-4] \
         + "-Flipped_Y.jpg", flipImageY)
-    cv2.imwrite(splitSlotDir + imagePath[-(lenName+1):-4] \
+    cv2.imwrite(splitSlotDir + "/" +  imagePath[-(lenName+1):-4] \
         + "-Flipped_XY.jpg", flipImageXY)
 
 

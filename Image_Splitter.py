@@ -9,7 +9,7 @@ import glob
 # User Parameters/Constants to Set
 ORIG_IMG_DIR = "Images/Original_Images/"
 SPLIT_IMG_DIR = "Images/Splitted_Images/"
-SPLIT_COUNT = 16 # Number of rows and columns each image gets split into
+SPLIT_COUNT = 3 # Number of rows and columns each image gets split into
 
 def time_convert(sec):
   mins = sec // 60
@@ -31,7 +31,7 @@ def deleteDirContents(dir):
 def replaceFileName(dir):
     # os.chdir(dir)
     for filename in glob.glob(slotDir + "/*"):
-        os.rename(filename, filename.replace("Stitcher-Snaps_for_8in_Wafer_Pave.", ""))
+        os.rename(filename, filename.replace("Window_Die1_Pave.", ""))
     for filename in glob.glob(slotDir + "/*"):
         os.rename(filename, filename.replace(".p0", ""))
 
@@ -53,19 +53,19 @@ def imageSplitter(imagePath, splitSlotDir, lenName):
     for row in range(SPLIT_COUNT):
         for col in range(SPLIT_COUNT):
             if (row + 1) < 10 and (col + 1) < 10:
-                cv2.imwrite(splitSlotDir + imagePath[-(lenName+1):-4] + "-0" + \
+                cv2.imwrite(splitSlotDir + "/" +  imagePath[-(lenName+1):-4] + "-0" + \
                     str(row+1) + "0" + str(col+1) + ".jpg", image[(row * lenRow): \
                     ((row+1) * lenRow), (col * lenCol): ((col+1) * lenCol)])
             elif (row + 1) < 10:
-                cv2.imwrite(splitSlotDir + imagePath[-(lenName+1):-4] + "-0" + \
+                cv2.imwrite(splitSlotDir + "/" +  imagePath[-(lenName+1):-4] + "-0" + \
                     str(row+1) + str(col+1) + ".jpg", image[(row * lenRow): \
                     ((row+1) * lenRow), (col * lenCol): ((col+1) * lenCol)])
             elif (col + 1) < 10:
-                cv2.imwrite(splitSlotDir + imagePath[-(lenName+1):-4] + "-" + \
+                cv2.imwrite(splitSlotDir + "/" +  imagePath[-(lenName+1):-4] + "-" + \
                     str(row+1) + "0" + str(col+1) + ".jpg", image[(row * lenRow): \
                     ((row+1) * lenRow), (col * lenCol): ((col+1) * lenCol)])
             else:
-                cv2.imwrite(splitSlotDir + imagePath[-(lenName+1):-4] + "-" + \
+                cv2.imwrite(splitSlotDir + "/" +  imagePath[-(lenName+1):-4] + "-" + \
                     str(row+1) + str(col+1) + ".jpg", image[(row * lenRow): \
                     ((row+1) * lenRow), (col * lenCol): ((col+1) * lenCol)])
 
