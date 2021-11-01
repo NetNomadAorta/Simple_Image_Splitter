@@ -49,6 +49,7 @@ def imageFlipper(imagePath, splitSlotDir, lenName):
     flipImageX = cv2.flip(image, 1)
     flipImageY = cv2.flip(image, 0)
     flipImageXY = cv2.flip(image, -1)
+    # Saving original and flipped images
     cv2.imwrite(splitSlotDir + "/" +  imagePath[-(lenName+1):], image)
     cv2.imwrite(splitSlotDir + "/" +  imagePath[-(lenName+1):-4] \
         + "-Flipped_X.jpg", flipImageX)
@@ -56,6 +57,21 @@ def imageFlipper(imagePath, splitSlotDir, lenName):
         + "-Flipped_Y.jpg", flipImageY)
     cv2.imwrite(splitSlotDir + "/" +  imagePath[-(lenName+1):-4] \
         + "-Flipped_XY.jpg", flipImageXY)
+        
+    # Rotating Image 90 degrees and flipping after rotation
+    rotateImage = cv2.rotate(image, cv2.ROTATE_90_CLOCKWISE)
+    rotateFlipImageX = cv2.flip(rotateImage, 1)
+    rotateFlipImageY = cv2.flip(rotateImage, 0)
+    rotateFlipImageXY = cv2.flip(rotateImage, -1)
+    # Saving rotated images
+    cv2.imwrite(splitSlotDir + "/" +  imagePath[-(lenName+1):-4] \
+        + "-Rotate_90.jpg", rotateImage)
+    cv2.imwrite(splitSlotDir + "/" +  imagePath[-(lenName+1):-4] \
+        + "-Rotate_90-Flipped_X.jpg", rotateFlipImageX)
+    cv2.imwrite(splitSlotDir + "/" +  imagePath[-(lenName+1):-4] \
+        + "-Rotate_90-Flipped_Y.jpg", rotateFlipImageY)
+    cv2.imwrite(splitSlotDir + "/" +  imagePath[-(lenName+1):-4] \
+        + "-Rotate_90-Flipped_XY.jpg", rotateFlipImageXY)
 
 
 
