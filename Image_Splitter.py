@@ -92,6 +92,10 @@ for slotDir in glob.glob(mainOrigImgDir[0] + "/*"):
     print("Starting", slotDir, "\n")
     replaceFileName(slotDir)
     
+    # Removes Thumbs.db if it is found to prevent it screwing up code ahead
+    if os.path.isfile(slotDir + "/Thumbs.db"):
+        os.remove(slotDir + "/Thumbs.db")
+    
     lenSlot = len(os.listdir(mainOrigImgDir[0])[i])
     splitSlotDir = makeDir(lenSlot)
     lenName = len(os.listdir(slotDir)[0])
