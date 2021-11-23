@@ -7,7 +7,7 @@ import glob
 
 
 # User Parameters/Constants to Set
-ORIG_IMG_DIR = "Images/Original_Images/"
+ORIG_IMG_DIR = "Images/To_Split_Images/"
 SPLIT_IMG_DIR = "Images/Splitted_Images/"
 SPLIT_COUNT = 9 # Number of rows and columns each image gets split into
 
