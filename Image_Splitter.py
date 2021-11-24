@@ -31,7 +31,10 @@ def deleteDirContents(dir):
 def replaceFileName(dir):
     # os.chdir(dir)
     for filename in glob.glob(slotDir + "/*"):
-        os.rename(filename, filename.replace("Window_Die1_Pave.", ""))
+        os.rename(filename, 
+                  filename.replace("Window_Die1_Pave.", "")\
+                          .replace("Die-1_Pave.", "")\
+                          .replace(".p1",""))
     for filename in glob.glob(slotDir + "/*"):
         os.rename(filename, filename.replace(".p0", ""))
 
