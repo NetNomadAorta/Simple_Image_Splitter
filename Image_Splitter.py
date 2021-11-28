@@ -5,7 +5,6 @@ import cv2
 import glob
 
 
-
 # User Parameters/Constants to Set
 ORIG_IMG_DIR = "Images/To_Split_Images/"
 SPLIT_IMG_DIR = "Images/Splitted_Images/"
