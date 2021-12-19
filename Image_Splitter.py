@@ -35,25 +35,26 @@ def replaceFileName(dir):
                           .replace("new_RefDes_1_Pave.", "")\
                           .replace(".20", ".P_")\
                           .replace("Die-1_Pave.", "")\
+                          .replace(".p0", "")\
                           .replace(".p1","")\
-                          # .replace("Row_1.Col_", "Row_01.Col_")\
-                          # .replace("Row_2.Col_", "Row_02.Col_")\
-                          # .replace("Row_3.Col_", "Row_03.Col_")\
-                          # .replace("Row_4.Col_", "Row_04.Col_")\
-                          # .replace("Row_5.Col_", "Row_05.Col_")\
-                          # .replace("Row_6.Col_", "Row_06.Col_")\
-                          # .replace("Row_7.Col_", "Row_07.Col_")\
-                          # .replace("Row_8.Col_", "Row_08.Col_")\
-                          # .replace("Row_9.Col_", "Row_09.Col_")\
-                          # .replace(".Col_1.", ".Col_01.")\
-                          # .replace(".Col_2.", ".Col_02.")\
-                          # .replace(".Col_3.", ".Col_03.")\
-                          # .replace(".Col_4.", ".Col_04.")\
-                          # .replace(".Col_5.", ".Col_05.")\
-                          # .replace(".Col_6.", ".Col_06.")\
-                          # .replace(".Col_7.", ".Col_07.")\
-                          # .replace(".Col_8.", ".Col_08.")\
-                          # .replace(".Col_9.", ".Col_09.")\
+                          .replace("Row_1.Col_", "Row_01.Col_")\
+                          .replace("Row_2.Col_", "Row_02.Col_")\
+                          .replace("Row_3.Col_", "Row_03.Col_")\
+                          .replace("Row_4.Col_", "Row_04.Col_")\
+                          .replace("Row_5.Col_", "Row_05.Col_")\
+                          .replace("Row_6.Col_", "Row_06.Col_")\
+                          .replace("Row_7.Col_", "Row_07.Col_")\
+                          .replace("Row_8.Col_", "Row_08.Col_")\
+                          .replace("Row_9.Col_", "Row_09.Col_")\
+                          .replace(".Col_1.", ".Col_01.")\
+                          .replace(".Col_2.", ".Col_02.")\
+                          .replace(".Col_3.", ".Col_03.")\
+                          .replace(".Col_4.", ".Col_04.")\
+                          .replace(".Col_5.", ".Col_05.")\
+                          .replace(".Col_6.", ".Col_06.")\
+                          .replace(".Col_7.", ".Col_07.")\
+                          .replace(".Col_8.", ".Col_08.")\
+                          .replace(".Col_9.", ".Col_09.")\
                           )
     for filename in glob.glob(slotDir + "/*"):
         os.rename(filename, filename.replace(".p0", ""))
