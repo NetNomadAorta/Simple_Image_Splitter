@@ -56,8 +56,6 @@ def replaceFileName(dir):
                           .replace(".Col_8.", ".Col_08.")\
                           .replace(".Col_9.", ".Col_09.")\
                           )
-    for filename in glob.glob(slotDir + "/*"):
-        os.rename(filename, filename.replace(".p0", ""))
 
 def makeDir(lenSlot):
     lenMain = (len(SPLIT_IMG_DIR)-1)
