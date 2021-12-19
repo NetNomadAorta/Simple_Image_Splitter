@@ -8,7 +8,7 @@ import glob
 # User Parameters/Constants to Set
 ORIG_IMG_DIR = "Images/To_Split_Images/"
 SPLIT_IMG_DIR = "Images/Splitted_Images/"
-SPLIT_COUNT = 9 # Number of rows and columns each image gets split into
+SPLIT_COUNT = 10 # Number of rows and columns each image gets split into
 
 def time_convert(sec):
   mins = sec // 60
@@ -32,6 +32,8 @@ def replaceFileName(dir):
     for filename in glob.glob(slotDir + "/*"):
         os.rename(filename, 
                   filename.replace("Window_Die1_Pave.", "")\
+                          .replace("new_RefDes_1_Pave.", "")\
+                          .replace(".20", ".P_")\
                           .replace("Die-1_Pave.", "")\
                           .replace(".p1","")\
                           # .replace("Row_1.Col_", "Row_01.Col_")\
